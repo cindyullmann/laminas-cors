@@ -16,7 +16,7 @@
  * and is licensed under the MIT license.
  */
 
-namespace ZfrCors;
+namespace LaminasCors;
 
 use Zend\EventManager\EventInterface;
 use Zend\ModuleManager\Feature\BootstrapListenerInterface;
@@ -39,7 +39,7 @@ class Module implements BootstrapListenerInterface, ConfigProviderInterface
         $serviceManager  = $application->getServiceManager();
         $eventManager    = $application->getEventManager();
 
-        /** @var \ZfrCors\Mvc\CorsRequestListener $listener */
+        /** @var \LaminasCors\Mvc\CorsRequestListener $listener */
         $listener = $serviceManager->get('ZfrCors\Mvc\CorsRequestListener');
         $listener->attach($eventManager);
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace ZfrCors\Exception;
+namespace LaminasCors\Exception;
 
 use DomainException;
 

@@ -16,7 +16,7 @@
  * and is licensed under the MIT license.
  */
 
-namespace ZfrCors;
+namespace LaminasCors;
 
 return [
     'service_manager' => [

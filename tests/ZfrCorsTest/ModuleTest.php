@@ -19,10 +19,10 @@
 namespace ZfrCorsTest;
 
 use PHPUnit\Framework\TestCase;
-use ZfrCors\Module;
+use LaminasCors\Module;
 
 /**
- * Tests for {@see \ZfrCors\Module}
+ * Tests for {@see \LaminasCors\Module}
  *
  * @license MIT
  * @author  Marco Pivetta <ocramius@gmail.com>
@@ -32,7 +32,7 @@ use ZfrCors\Module;
 class ModuleTest extends \PHPUnit\Framework\TestCase
 {
     /**
-     * @covers \ZfrCors\Module::getConfig
+     * @covers \LaminasCors\Module::getConfig
      */
     public function testGetConfig()
     {
@@ -43,7 +43,7 @@ class ModuleTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers \ZfrCors\Module::onBootstrap
+     * @covers \LaminasCors\Module::onBootstrap
      */
     public function testAssertListenerIsCorrectlyRegistered()
     {

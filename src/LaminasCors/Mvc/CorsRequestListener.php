@@ -16,16 +16,16 @@
  * and is licensed under the MIT license.
  */
 
-namespace ZfrCors\Mvc;
+namespace LaminasCors\Mvc;
 
 use Zend\EventManager\AbstractListenerAggregate;
 use Zend\EventManager\EventManagerInterface;
 use Zend\Http\Response as HttpResponse;
 use Zend\Http\Request as HttpRequest;
 use Zend\Mvc\MvcEvent;
-use ZfrCors\Exception\DisallowedOriginException;
-use ZfrCors\Exception\InvalidOriginException;
-use ZfrCors\Service\CorsService;
+use LaminasCors\Exception\DisallowedOriginException;
+use LaminasCors\Exception\InvalidOriginException;
+use LaminasCors\Service\CorsService;
 
 /**
  * CorsRequestListener

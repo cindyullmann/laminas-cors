@@ -16,30 +16,14 @@
  * and is licensed under the MIT license.
  */
 
-namespace ZfrCors\Factory;
+namespace LaminasCors\Exception;
 
-use Interop\Container\ContainerInterface;
-use ZfrCors\Options\CorsOptions;
-use ZfrCors\Service\CorsService;
+use DomainException;
 
 /**
- * CorsServiceFactory
- *
  * @license MIT
  * @author  Florent Blaison <florent.blaison@gmail.com>
  */
-class CorsServiceFactory
+class DisallowedOriginException extends DomainException implements ExceptionInterface
 {
-    /**
-     * {@inheritDoc}
-     *
-     * @return CorsService
-     */
-    public function __invoke(ContainerInterface $container, $requestedName, $options = null)
-    {
-        /* @var $corsOptions CorsOptions */
-        $corsOptions = $container->get('ZfrCors\Options\CorsOptions');
-
-        return new CorsService($corsOptions);
-    }
 }

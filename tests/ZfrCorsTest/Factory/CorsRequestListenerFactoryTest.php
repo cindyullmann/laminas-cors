@@ -22,11 +22,11 @@ use PHPUnit\Framework\TestCase as TestCase;
 use ZfrCorsTest\Util\ServiceManagerFactory;
 
 /**
- * Integration tests for {@see \ZfrCors\Service\CorsService}
+ * Integration tests for {@see \LaminasCors\Service\CorsService}
  *
  * @author Michaël Gallego <mic.gallego@gmail.com>
  *
- * @covers \ZfrCors\Factory\CorsRequestListenerFactory
+ * @covers \LaminasCors\Factory\CorsRequestListenerFactory
  * @group Coverage
  */
 class CorsRequestListenerFactoryTest extends TestCase

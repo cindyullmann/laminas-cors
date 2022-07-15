@@ -16,15 +16,15 @@
  * and is licensed under the MIT license.
  */
 
-namespace ZfrCors\Service;
+namespace LaminasCors\Service;
 
 use Zend\Mvc\Router\Http\RouteMatch as DeprecatedRouteMatch;
 use Zend\Router\Http\RouteMatch;
 use Zend\Http\Header;
 use Zend\Uri\UriFactory;
-use ZfrCors\Exception\DisallowedOriginException;
-use ZfrCors\Exception\InvalidOriginException;
-use ZfrCors\Options\CorsOptions;
+use LaminasCors\Exception\DisallowedOriginException;
+use LaminasCors\Exception\InvalidOriginException;
+use LaminasCors\Options\CorsOptions;
 use Zend\Http\Request as HttpRequest;
 use Zend\Http\Response as HttpResponse;
 

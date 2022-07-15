@@ -25,16 +25,16 @@ use Zend\Http\Response as HttpResponse;
 use Zend\Mvc\MvcEvent;
 use Zend\Mvc\RouteListener;
 use Zend\Router\Http\TreeRouteStack;
-use ZfrCors\Mvc\CorsRequestListener;
-use ZfrCors\Options\CorsOptions;
-use ZfrCors\Service\CorsService;
+use LaminasCors\Mvc\CorsRequestListener;
+use LaminasCors\Options\CorsOptions;
+use LaminasCors\Service\CorsService;
 
 /**
- * Integration tests for {@see \ZfrCors\Service\CorsService}
+ * Integration tests for {@see \LaminasCors\Service\CorsService}
  *
  * @author Michaël Gallego <mic.gallego@gmail.com>
  *
- * @covers \ZfrCors\Mvc\CorsRequestListener
+ * @covers \LaminasCors\Mvc\CorsRequestListener
  * @group  Coverage
  */
 class CorsRequestListenerTest extends TestCase
@@ -217,7 +217,7 @@ class CorsRequestListenerTest extends TestCase
                             'options' => [
                                 'verb' => 'get',
                                 'defaults' => [
-                                    \ZfrCors\Options\CorsOptions::ROUTE_PARAM => [
+                                    \LaminasCors\Options\CorsOptions::ROUTE_PARAM => [
                                         'allowed_origins' => ['http://example.com'],
                                         'allowed_methods' => ['GET'],
                                     ],

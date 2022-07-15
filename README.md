@@ -86,7 +86,7 @@ return [
                     'defaults' => [
                         // This will replace allowed_methods configuration to only allow GET requests
                         // and only allow a specific origin instead of the wildcard origin
-                        ZfrCors\Options\CorsOptions::ROUTE_PARAM => [
+                        LaminasCors\Options\CorsOptions::ROUTE_PARAM => [
                             'allowed_origins' => ['http://example.org'],
                             'allowed_methods' => ['GET'],
                         ],
@@ -99,7 +99,7 @@ return [
                     'route' => '/ajax',
                     'defaults' => [
                         // This overrides the wildcard origin
-                        ZfrCors\Options\CorsOptions::ROUTE_PARAM => [
+                        LaminasCors\Options\CorsOptions::ROUTE_PARAM => [
                             'allowed_origins' => ['http://example.org'],
                         ],
                     ],
@@ -112,7 +112,7 @@ return [
                             'route' => '/blogpost',
                             'defaults' => [
                                 // This would only allow `http://example.org` to GET this route
-                                \ZfrCors\Options\CorsOptions::ROUTE_PARAM => [
+                                \LaminasCors\Options\CorsOptions::ROUTE_PARAM => [
                                     'allowed_methods' => ['GET'],
                                 ],
                             ],
@@ -125,7 +125,7 @@ return [
                                     'route' => ':id',
                                     // This would only allow origin `http://example.org` to apply DELETE on this route
                                     'defaults' => [
-                                        \ZfrCors\Options\CorsOptions::ROUTE_PARAM => [
+                                        \LaminasCors\Options\CorsOptions::ROUTE_PARAM => [
                                             'allowed_methods' => ['DELETE'],
                                         ],
                                     ],
