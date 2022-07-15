@@ -1,5 +1,5 @@
 {
-    "name": "zfr/zfr-cors",
+    "name": "cindyullmann/zfr-cors",
     "description": "Zend Framework module that let you deal with CORS requests",
     "type": "library",
     "license": "MIT",
