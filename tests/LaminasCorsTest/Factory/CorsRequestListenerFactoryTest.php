@@ -16,10 +16,10 @@
  * and is licensed under the MIT license.
  */
 
-namespace ZfrCorsTest\Factory;
+namespace LaminasCorsTest\Factory;
 
 use PHPUnit\Framework\TestCase as TestCase;
-use ZfrCorsTest\Util\ServiceManagerFactory;
+use LaminasCorsTest\Util\ServiceManagerFactory;
 
 /**
  * Integration tests for {@see \LaminasCors\Service\CorsService}
@@ -34,8 +34,8 @@ class CorsRequestListenerFactoryTest extends TestCase
     public function testCanCreateCorsRequestListener()
     {
         $serviceManager = ServiceManagerFactory::getServiceManager();
-        $listener       = $serviceManager->get('ZfrCors\Mvc\CorsRequestListener');
+        $listener       = $serviceManager->get('LaminasCors\Mvc\CorsRequestListener');
 
-        $this->assertInstanceOf('ZfrCors\Mvc\CorsRequestListener', $listener);
+        $this->assertInstanceOf('LaminasCors\Mvc\CorsRequestListener', $listener);
     }
 }

@@ -18,11 +18,11 @@
 
 namespace LaminasCors\Mvc;
 
-use Zend\EventManager\AbstractListenerAggregate;
-use Zend\EventManager\EventManagerInterface;
-use Zend\Http\Response as HttpResponse;
-use Zend\Http\Request as HttpRequest;
-use Zend\Mvc\MvcEvent;
+use Laminas\EventManager\AbstractListenerAggregate;
+use Laminas\EventManager\EventManagerInterface;
+use Laminas\Http\Response as HttpResponse;
+use Laminas\Http\Request as HttpRequest;
+use Laminas\Mvc\MvcEvent;
 use LaminasCors\Exception\DisallowedOriginException;
 use LaminasCors\Exception\InvalidOriginException;
 use LaminasCors\Service\CorsService;

@@ -18,15 +18,15 @@
 
 namespace LaminasCors\Service;
 
-use Zend\Mvc\Router\Http\RouteMatch as DeprecatedRouteMatch;
-use Zend\Router\Http\RouteMatch;
-use Zend\Http\Header;
-use Zend\Uri\UriFactory;
+use Laminas\Http\Headers;
+use Laminas\Router\Http\RouteMatch;
+use Laminas\Http\Header;
+use Laminas\Uri\UriFactory;
 use LaminasCors\Exception\DisallowedOriginException;
 use LaminasCors\Exception\InvalidOriginException;
 use LaminasCors\Options\CorsOptions;
-use Zend\Http\Request as HttpRequest;
-use Zend\Http\Response as HttpResponse;
+use Laminas\Http\Request as HttpRequest;
+use Laminas\Http\Response as HttpResponse;
 
 /**
  * Service that offers a simple mechanism to handle CORS requests
@@ -126,14 +126,14 @@ class CorsService
      * Create a preflight response by adding the correspoding headers which are merged with per-route configuration
      *
      * @param HttpRequest                          $request
-     * @param RouteMatch|DeprecatedRouteMatch|null $routeMatch
+     * @param RouteMatch|null $routeMatch
      *
      * @return HttpResponse
      */
     public function createPreflightCorsResponseWithRouteOptions(HttpRequest $request, $routeMatch = null)
     {
         $options = $this->options;
-        if ($routeMatch instanceof RouteMatch || $routeMatch instanceof DeprecatedRouteMatch) {
+        if ($routeMatch instanceof RouteMatch) {
             $options->setFromArray($routeMatch->getParam(CorsOptions::ROUTE_PARAM) ?: []);
         }
         $response = $this->createPreflightCorsResponse($request);
@@ -152,7 +152,7 @@ class CorsService
      */
     public function populateCorsResponse(HttpRequest $request, HttpResponse $response, $routeMatch = null)
     {
-        if ($routeMatch instanceof RouteMatch || $routeMatch instanceof DeprecatedRouteMatch) {
+        if ($routeMatch instanceof RouteMatch) {
             $this->options->setFromArray($routeMatch->getParam(CorsOptions::ROUTE_PARAM) ?: []);
         }
 
@@ -224,7 +224,7 @@ class CorsService
      *
      * @link http://www.w3.org/TR/cors/#resource-implementation
      * @param HttpResponse $response
-     * @return \Zend\Http\Headers
+     * @return Headers
      */
     public function ensureVaryHeader(HttpResponse $response)
     {

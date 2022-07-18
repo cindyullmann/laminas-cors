@@ -38,7 +38,7 @@ class CorsRequestListenerFactory
     public function __invoke(ContainerInterface $container, $requestedName, $options = null)
     {
         /* @var $corsService CorsService */
-        $corsService = $container->get('ZfrCors\Service\CorsService');
+        $corsService = $container->get('LaminasCors\Service\CorsService');
 
         return new CorsRequestListener($corsService);
     }

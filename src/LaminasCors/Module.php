@@ -18,9 +18,9 @@
 
 namespace LaminasCors;
 
-use Zend\EventManager\EventInterface;
-use Zend\ModuleManager\Feature\BootstrapListenerInterface;
-use Zend\ModuleManager\Feature\ConfigProviderInterface;
+use Laminas\EventManager\EventInterface;
+use Laminas\ModuleManager\Feature\BootstrapListenerInterface;
+use Laminas\ModuleManager\Feature\ConfigProviderInterface;
 
 /**
  * @licence MIT
@@ -34,13 +34,13 @@ class Module implements BootstrapListenerInterface, ConfigProviderInterface
      */
     public function onBootstrap(EventInterface $event)
     {
-        /* @var $application \Zend\Mvc\Application */
+        /* @var $application \Laminas\Mvc\Application */
         $application     = $event->getTarget();
         $serviceManager  = $application->getServiceManager();
         $eventManager    = $application->getEventManager();
 
         /** @var \LaminasCors\Mvc\CorsRequestListener $listener */
-        $listener = $serviceManager->get('ZfrCors\Mvc\CorsRequestListener');
+        $listener = $serviceManager->get('LaminasCors\Mvc\CorsRequestListener');
         $listener->attach($eventManager);
     }
 

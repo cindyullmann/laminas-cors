@@ -38,7 +38,7 @@ class CorsServiceFactory
     public function __invoke(ContainerInterface $container, $requestedName, $options = null)
     {
         /* @var $corsOptions CorsOptions */
-        $corsOptions = $container->get('ZfrCors\Options\CorsOptions');
+        $corsOptions = $container->get('LaminasCors\Options\CorsOptions');
 
         return new CorsService($corsOptions);
     }

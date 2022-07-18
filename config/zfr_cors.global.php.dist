@@ -1,12 +1,12 @@
 <?php
 
 /**
- * This is the config file for ZfrCors. Just drop this file into your config/autoload folder (don't
+ * This is the config file for LaminasCors. Just drop this file into your config/autoload folder (don't
  * forget to remove the .dist extension from the file), and configure it as you want
  */
 
 return [
-    'zfr_cors' => [
+    'laminas_cors' => [
          /**
           * Set the list of allowed origins domain with protocol.
           */

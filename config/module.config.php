@@ -27,5 +27,5 @@ return [
         ],
     ],
 
-    'zfr_cors' => [],
+    'laminas_cors' => [],
 ];

@@ -16,26 +16,26 @@
  * and is licensed under the MIT license.
  */
 
-namespace ZfrCorsTest\Factory;
+namespace LaminasCorsTest\Factory;
 
 use PHPUnit\Framework\TestCase as TestCase;
-use ZfrCorsTest\Util\ServiceManagerFactory;
+use LaminasCorsTest\Util\ServiceManagerFactory;
 
 /**
  * Integration tests for {@see \LaminasCors\Service\CorsService}
  *
  * @author Michaël Gallego <mic.gallego@gmail.com>
  *
- * @covers \LaminasCors\Factory\CorsOptionsFactory
+ * @covers \LaminasCors\Factory\CorsServiceFactory
  * @group Coverage
  */
-class CorsOptionsFactoryTest extends TestCase
+class CorsServiceFactoryTest extends TestCase
 {
-    public function testCanCreateOptions()
+    public function testCanCreateCorsService()
     {
         $serviceManager = ServiceManagerFactory::getServiceManager();
-        $options        = $serviceManager->get('ZfrCors\Options\CorsOptions');
+        $service        = $serviceManager->get('LaminasCors\Service\CorsService');
 
-        $this->assertInstanceOf('ZfrCors\Options\CorsOptions', $options);
+        $this->assertInstanceOf('LaminasCors\Service\CorsService', $service);
     }
 }

@@ -16,14 +16,13 @@
  * and is licensed under the MIT license.
  */
 
-namespace ZfrCorsTest\Service;
+namespace LaminasCorsTest\Service;
 
 use PHPUnit\Framework\TestCase as TestCase;
-use Zend\Http\Response as HttpResponse;
-use Zend\Http\Request as HttpRequest;
-use Zend\Mvc\MvcEvent;
-use Zend\Mvc\Router\Http\RouteMatch as DeprecatedRouteMatch;
-use Zend\Router\Http\RouteMatch;
+use Laminas\Http\Response as HttpResponse;
+use Laminas\Http\Request as HttpRequest;
+use Laminas\Mvc\MvcEvent;
+use Laminas\Router\Http\RouteMatch;
 use LaminasCors\Options\CorsOptions;
 use LaminasCors\Service\CorsService;
 
@@ -354,7 +353,7 @@ class CorsServiceTest extends TestCase
 
     public function testCanHandleUnconfiguredRouteMatch()
     {
-        $routeMatch = class_exists(DeprecatedRouteMatch::class) ? new DeprecatedRouteMatch([]) : new RouteMatch([]);
+        $routeMatch = new RouteMatch([]);
 
         $request = new HttpRequest();
         $request->getHeaders()->addHeaderLine('Origin', 'http://example.com');
@@ -390,8 +389,7 @@ class CorsServiceTest extends TestCase
             ],
         ];
 
-        $routeMatch = class_exists(DeprecatedRouteMatch::class) ? new DeprecatedRouteMatch($routeMatchParameters) :
-            new RouteMatch($routeMatchParameters);
+        $routeMatch = new RouteMatch($routeMatchParameters);
 
         $request = new HttpRequest();
         $request->getHeaders()->addHeaderLine('Origin', 'http://example.org');
@@ -440,13 +438,12 @@ class CorsServiceTest extends TestCase
             ],
         ];
 
-        $routeMatch = class_exists(DeprecatedRouteMatch::class) ? new DeprecatedRouteMatch($routeMatchParameters) :
-            new RouteMatch($routeMatchParameters);
+        $routeMatch = new RouteMatch($routeMatchParameters);
 
         $request->getHeaders()->addHeaderLine('Origin', 'http://example.org');
 
         $response = $this->corsService->populateCorsResponse($request, $response, $routeMatch);
-        $this->assertInstanceOf(\Zend\Http\Response::class, $response);
+        $this->assertInstanceOf(\Laminas\Http\Response::class, $response);
         $this->assertEquals(
             'http://example.org',
             $response->getHeaders()->get('Access-Control-Allow-Origin')->getFieldValue()
@@ -466,8 +463,7 @@ class CorsServiceTest extends TestCase
             ],
         ];
 
-        $routeMatch = class_exists(DeprecatedRouteMatch::class) ? new DeprecatedRouteMatch($routeMatchParameters) :
-            new RouteMatch($routeMatchParameters);
+        $routeMatch = new RouteMatch($routeMatchParameters);
 
         $request->getHeaders()->addHeaderLine('Origin', 'http://example.com');
 

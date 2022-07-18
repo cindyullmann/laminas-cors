@@ -16,7 +16,7 @@
  * and is licensed under the MIT license.
  */
 
-namespace ZfrCorsTest;
+namespace LaminasCorsTest;
 
 use PHPUnit\Framework\TestCase;
 use LaminasCors\Module;
@@ -48,13 +48,13 @@ class ModuleTest extends \PHPUnit\Framework\TestCase
     public function testAssertListenerIsCorrectlyRegistered()
     {
         $module         = new Module();
-        $mvcEvent       = $this->getMockBuilder('Zend\Mvc\MvcEvent')->getMock();
-        $application    = $this->getMockBuilder('Zend\Mvc\Application', [], [], '', false)
+        $mvcEvent       = $this->getMockBuilder('Laminas\Mvc\MvcEvent')->getMock();
+        $application    = $this->getMockBuilder('Laminas\Mvc\Application', [], [], '', false)
             ->disableOriginalConstructor()
             ->getMock();
-        $eventManager   = $this->getMockBuilder('Zend\EventManager\EventManagerInterface')->getMock();
-        $serviceManager = $this->getMockBuilder('Zend\ServiceManager\ServiceManager')->getMock();
-        $corsListener   = $this->getMockBuilder('ZfrCors\Mvc\CorsRequestListener', [], [], '', false)
+        $eventManager   = $this->getMockBuilder('Laminas\EventManager\EventManagerInterface')->getMock();
+        $serviceManager = $this->getMockBuilder('Laminas\ServiceManager\ServiceManager')->getMock();
+        $corsListener   = $this->getMockBuilder('LaminasCors\Mvc\CorsRequestListener', [], [], '', false)
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -64,7 +64,7 @@ class ModuleTest extends \PHPUnit\Framework\TestCase
         $serviceManager
             ->expects($this->any())
             ->method('get')
-            ->with('ZfrCors\Mvc\CorsRequestListener')
+            ->with('LaminasCors\Mvc\CorsRequestListener')
             ->will($this->returnValue($corsListener));
 
         $corsListener->expects($this->once())->method('attach')->with($eventManager);
